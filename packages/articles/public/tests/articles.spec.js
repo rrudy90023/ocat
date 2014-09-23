@@ -57,7 +57,8 @@
             title: 'An Article about MEAN',
             content: 'MEAN rocks!',
             potato: 'Potato taco good!',
-            eggplant: 'Eggplant taco good!'
+            eggplant: 'Eggplant taco good!',
+            total: 'Total pay!'
           }]);
 
           // run controller
@@ -69,7 +70,8 @@
             title: 'An Article about MEAN',
             content: 'MEAN rocks!',
             potato: 'Potato taco good!',
-            eggplant: 'Eggplant taco good!'
+            eggplant: 'Eggplant taco good!',
+            total: 'Total pay!'
           }]);
 
         });
@@ -85,7 +87,8 @@
               title: 'An Article about MEAN',
               content: 'MEAN rocks!',
               potato: 'Potato taco good!',
-              eggplant: 'Eggplant taco good!'
+              eggplant: 'Eggplant taco good!',
+              total: 'Total pay!'
             };
           };
 
@@ -111,7 +114,8 @@
               title: 'An Article about MEAN',
               content: 'MEAN rocks!',
               potato: 'Potato taco good!',
-              eggplant: 'Eggplant taco good!'
+              eggplant: 'Eggplant taco good!',
+              total: 'Total pay!'
             };
           };
 
@@ -122,7 +126,8 @@
               title: 'An Article about MEAN',
               content: 'MEAN rocks!',
               potato: 'Potato taco good!',
-              eggplant: 'Eggplant taco good!'
+              eggplant: 'Eggplant taco good!',
+              total: 'Total pay!'
             };
           };
 
@@ -131,6 +136,7 @@
           scope.content = 'MEAN rocks!';
           scope.potato = 'Potato taco good!';
           scope.eggplant = 'Eggplant taco good!';
+          scope.total = 'Total pay!';
           // test post request is sent
           $httpBackend.expectPOST('articles', postArticleData()).respond(responseArticleData());
 
@@ -143,6 +149,7 @@
           expect(scope.content).toEqual('');
           expect(scope.potato).toEqual('');
           expect(scope.eggplant).toEqual('');
+          expect(scope.total).toEqual('');
           // test URL location to new object
           expect($location.path()).toBe('/articles/' + responseArticleData()._id);
         });

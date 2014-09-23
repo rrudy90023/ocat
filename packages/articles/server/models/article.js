@@ -38,6 +38,13 @@ var ArticleSchema = new Schema({
     trim: true
   },
 
+  total:{
+    type: Number,
+    required: true,
+    trim: true
+
+  },
+
   user: {
     type: Schema.ObjectId,
     ref: 'User'
@@ -65,7 +72,9 @@ ArticleSchema.path('eggplant').validate(function(content) {
   return !!content;
 }, 'Eggplant taco cannot be blank');
 
-
+ArticleSchema.path('total').validate(function(content) {
+  return !!content;
+}, 'Total cannot be blank');
 /**
  * Statics
  */

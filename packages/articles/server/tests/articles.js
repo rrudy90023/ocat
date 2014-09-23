@@ -33,6 +33,7 @@ describe('<Unit Test>', function() {
           content: 'Article Content',
           potato: 'Article Potato',
           eggplant: 'Article Eggplant',
+          total: 'Article Total',
           user: user
         });
 
@@ -48,6 +49,7 @@ describe('<Unit Test>', function() {
           article.content.should.equal('Article Content');
           article.potato.should.equal('Article Potato');
           article.eggplant.should.equal('Article Eggplant');
+          article.total.should.equal('Article Total');
           article.user.should.not.have.length(0);
           article.created.should.not.have.length(0);
           done();
@@ -85,6 +87,16 @@ describe('<Unit Test>', function() {
 
       it('should be able to show an error when try to save without eggplant', function(done) {
         article.eggplant = '';
+
+        return article.save(function(err) {
+          should.exist(err);
+          done();
+        });
+      });
+
+
+      it('should be able to show an error when try to save without total', function(done) {
+        article.total = '';
 
         return article.save(function(err) {
           should.exist(err);

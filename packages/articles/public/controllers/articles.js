@@ -15,7 +15,8 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
           title: this.title,
           content: this.content,
           potato: this.potato,
-          eggplant: this.eggplant
+          eggplant: this.eggplant,
+          total: this.total
         });
         article.$save(function(response) {
           $location.path('articles/' + response._id);
@@ -25,6 +26,7 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         this.content = '';
         this.potato = '';
         this.eggplant ='';
+        this.total = '';
       } else {
         $scope.submitted = true;
       }
