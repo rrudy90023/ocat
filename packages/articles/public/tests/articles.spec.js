@@ -55,7 +55,9 @@
           // test expected GET request
           $httpBackend.expectGET('articles').respond([{
             title: 'An Article about MEAN',
-            content: 'MEAN rocks!'
+            content: 'MEAN rocks!',
+            potato: 'Potato taco good!',
+            eggplant: 'Eggplant taco good!'
           }]);
 
           // run controller
@@ -65,7 +67,9 @@
           // test scope value
           expect(scope.articles).toEqualData([{
             title: 'An Article about MEAN',
-            content: 'MEAN rocks!'
+            content: 'MEAN rocks!',
+            potato: 'Potato taco good!',
+            eggplant: 'Eggplant taco good!'
           }]);
 
         });
@@ -79,7 +83,9 @@
           var testArticleData = function() {
             return {
               title: 'An Article about MEAN',
-              content: 'MEAN rocks!'
+              content: 'MEAN rocks!',
+              potato: 'Potato taco good!',
+              eggplant: 'Eggplant taco good!'
             };
           };
 
@@ -103,7 +109,9 @@
           var postArticleData = function() {
             return {
               title: 'An Article about MEAN',
-              content: 'MEAN rocks!'
+              content: 'MEAN rocks!',
+              potato: 'Potato taco good!',
+              eggplant: 'Eggplant taco good!'
             };
           };
 
@@ -112,14 +120,17 @@
             return {
               _id: '525cf20451979dea2c000001',
               title: 'An Article about MEAN',
-              content: 'MEAN rocks!'
+              content: 'MEAN rocks!',
+              potato: 'Potato taco good!',
+              eggplant: 'Eggplant taco good!'
             };
           };
 
           // fixture mock form input values
           scope.title = 'An Article about MEAN';
           scope.content = 'MEAN rocks!';
-
+          scope.potato = 'Potato taco good!';
+          scope.eggplant = 'Eggplant taco good!';
           // test post request is sent
           $httpBackend.expectPOST('articles', postArticleData()).respond(responseArticleData());
 
@@ -130,7 +141,8 @@
           // test form input(s) are reset
           expect(scope.title).toEqual('');
           expect(scope.content).toEqual('');
-
+          expect(scope.potato).toEqual('');
+          expect(scope.eggplant).toEqual('');
           // test URL location to new object
           expect($location.path()).toBe('/articles/' + responseArticleData()._id);
         });

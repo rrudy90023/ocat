@@ -25,6 +25,19 @@ var ArticleSchema = new Schema({
     required: true,
     trim: true
   },
+
+  potato: {
+    type: Number,
+    required: true,
+    trim: true
+  },
+
+  eggplant: {
+    type: Number,
+    required: true,
+    trim: true
+  },
+
   user: {
     type: Schema.ObjectId,
     ref: 'User'
@@ -41,6 +54,17 @@ ArticleSchema.path('title').validate(function(title) {
 ArticleSchema.path('content').validate(function(content) {
   return !!content;
 }, 'Content cannot be blank');
+
+
+ArticleSchema.path('potato').validate(function(content) {
+  return !!content;
+}, 'Potato taco cannot be blank');
+
+
+ArticleSchema.path('eggplant').validate(function(content) {
+  return !!content;
+}, 'Eggplant taco cannot be blank');
+
 
 /**
  * Statics

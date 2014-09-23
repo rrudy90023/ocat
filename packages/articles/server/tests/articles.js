@@ -31,6 +31,8 @@ describe('<Unit Test>', function() {
         article = new Article({
           title: 'Article Title',
           content: 'Article Content',
+          potato: 'Article Potato',
+          eggplant: 'Article Eggplant',
           user: user
         });
 
@@ -44,6 +46,8 @@ describe('<Unit Test>', function() {
           should.not.exist(err);
           article.title.should.equal('Article Title');
           article.content.should.equal('Article Content');
+          article.potato.should.equal('Article Potato');
+          article.eggplant.should.equal('Article Eggplant');
           article.user.should.not.have.length(0);
           article.created.should.not.have.length(0);
           done();
@@ -68,6 +72,28 @@ describe('<Unit Test>', function() {
         });
       });
 
+
+      it('should be able to show an error when try to save without potato', function(done) {
+        article.potato = '';
+
+        return article.save(function(err) {
+          should.exist(err);
+          done();
+        });
+      });
+
+
+      it('should be able to show an error when try to save without eggplant', function(done) {
+        article.eggplant = '';
+
+        return article.save(function(err) {
+          should.exist(err);
+          done();
+        });
+      });
+
+
+
       it('should be able to show an error when try to save without user', function(done) {
         article.user = {};
 
@@ -76,6 +102,8 @@ describe('<Unit Test>', function() {
           done();
         });
       });
+
+
 
     });
 
