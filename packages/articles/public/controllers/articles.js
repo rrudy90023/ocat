@@ -9,6 +9,15 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
       return $scope.global.isAdmin || article.user._id === $scope.global.user._id;
     };
 
+
+
+    $scope.$watch('eggplant + potato', function (value) {
+        $scope.total = '$' + value + '.00';
+
+    });
+
+
+
     $scope.create = function(isValid) {
       if (isValid) {
         var article = new Articles({
@@ -31,6 +40,9 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         $scope.submitted = true;
       }
     };
+
+
+
 
 
 

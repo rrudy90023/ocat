@@ -39,7 +39,7 @@ var ArticleSchema = new Schema({
   },
 
   total:{
-    type: Number,
+    type: String,
     required: true,
     trim: true
 

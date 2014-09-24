@@ -1,4 +1,6 @@
 <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+
+
   <form name="articleForm" class="form-horizontal col-md-6" role="form" data-ng-submit="update(articleForm.$valid)" novalidate>
     <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.title.$invalid }">
       <label mean-token="'edit-title'" for="title" class="col-md-2 control-label">Title</label>
@@ -10,6 +12,9 @@
       </div>
 
     </div>
+
+
+
     <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.content.$invalid }">
       <label mean-token="'edit-content'" for="content" class="col-md-2 control-label">Content</label>
       <div class="col-md-10">
@@ -19,10 +24,51 @@
         </div>
       </div>
     </div>
+
+
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.potato.$invalid }">
+      <label mean-token="'edit-potato'" for="potato" class="col-md-3 control-label">Potato</label>
+      <div class="col-md-9">
+        <input name="potato" data-ng-model="article.potato" id="potato" cols="30" rows="10" placeholder="potato" class="form-control" required>
+        <div ng-show="submitted && articleForm.potato.$invalid" class="help-block">
+          <p ng-show="articleForm.potato.$error.required">Potato is required</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.eggplant.$invalid }">
+      <label mean-token="'edit-eggplant'" for="eggplant" class="col-md-3 control-label">Eggplant</label>
+      <div class="col-md-9">
+        <input name="eggplant" data-ng-model="article.eggplant" id="eggplant" cols="30" rows="10" placeholder="eggplant" class="form-control" required>
+        <div ng-show="submitted && articleForm.eggplant.$invalid" class="help-block">
+          <p ng-show="articleForm.eggplant.$error.required">Eggplant is required</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.total.$invalid }">
+      <label mean-token="'edit-total'" for="total" class="col-md-3 control-label">Total</label>
+      <div class="col-md-9">
+        <input name="total" data-ng-model="article.total" id="total" cols="30" rows="10" placeholder="{{ (eggplant + potato) | currency}}" class="form-control" required> Dollars
+        <div ng-show="submitted && articleForm.total.$invalid" class="help-block">
+          <p ng-show="articleForm.total.$error.required">Total is required</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
     <div class="form-group">
       <div class="col-md-offset-2 col-md-10">
         <button mean-token="'edit-submit'" type="submit" class="btn btn-default">Submit</button>
       </div>
     </div>
+
+
+
   </form>
 </section>
