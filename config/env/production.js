@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 
 module.exports = {
 
@@ -16,7 +16,7 @@ module.exports = {
    * See http://mongodb.github.io/node-mongodb-native/driver-articles/mongoclient.html#mongoclient-connect-options
    * and http://mongoosejs.com/docs/connections.html for more information
    */
-  //dbOptions: {
+  dbOptions: {
     /*
     server: {
         socketOptions: {
@@ -33,7 +33,7 @@ module.exports = {
       numberOfRetries: 2
     }
     */
-  //},
+  },
   app: {
     name: 'MEAN - A Modern Stack - Production'
   },

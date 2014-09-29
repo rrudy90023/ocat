@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 
 // Requires meanio
 var mean = require('meanio');
