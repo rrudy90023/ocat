@@ -1,11 +1,11 @@
-//'use strict';
+'use strict';
 
 module.exports = {
 
-    db: "mongodb://rrudy90023:monrags14@paulo.mongohq.com:10095/mean-on-heroku",
-    app: {
-        name: "MEAN - Ocat"
-    },
+    db: "mongodb://rrudy90023:monrags14@kahana.mongohq.com:10008/ocat",
+    // app: {
+    //     name: "MEAN - Ocat"
+    // },
 
 
 
