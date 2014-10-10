@@ -33,6 +33,8 @@ describe('<Unit Test>', function() {
           content: 'Article Content',
           potato: 'Article Potato',
           eggplant: 'Article Eggplant',
+          squash: 'Article Squash',
+          cactus: 'Article Cactus',
           total: 'Article Total',
           user: user
         });
@@ -49,6 +51,8 @@ describe('<Unit Test>', function() {
           article.content.should.equal('Article Content');
           article.potato.should.equal('Article Potato');
           article.eggplant.should.equal('Article Eggplant');
+          article.squash.should.equal('Article Squash');
+          article.cactus.should.equal('Article Cactus');
           article.total.should.equal('Article Total');
           article.user.should.not.have.length(0);
           article.created.should.not.have.length(0);
@@ -93,6 +97,28 @@ describe('<Unit Test>', function() {
           done();
         });
       });
+
+
+      it('should be able to show an error when try to save without squash', function(done) {
+        article.squash = '';
+
+        return article.save(function(err) {
+          should.exist(err);
+          done();
+        });
+      });
+
+
+
+      it('should be able to show an error when try to save without cactus', function(done) {
+        article.cactus = '';
+
+        return article.save(function(err) {
+          should.exist(err);
+          done();
+        });
+      });
+
 
 
       it('should be able to show an error when try to save without total', function(done) {

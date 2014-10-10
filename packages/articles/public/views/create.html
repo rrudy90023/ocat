@@ -10,10 +10,13 @@
       </div>
 
     </div>
+
+
+
     <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.content.$invalid }">
       <label mean-token="'create-content'" for="content" class="col-md-3 control-label">Notes</label>
       <div class="col-md-9">
-        <textarea name="content" data-ng-model="content" id="content" cols="30" rows="10" placeholder="Notes" class="form-control" required></textarea>
+        <input name="content" data-ng-model="content" id="content" placeholder="Notes" class="form-control" required></input>
         <div ng-show="submitted && articleForm.content.$invalid" class="help-block">
           <p ng-show="articleForm.content.$error.required">Note is required</p>
         </div>
@@ -24,10 +27,8 @@
     <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.potato.$invalid }">
       <label mean-token="'create-potato'" for="potato" class="col-md-3 control-label">Potato</label>
       <div class="col-md-9">
-        <input name="potato" data-ng-model="potato" id="potato" cols="30" rows="10" placeholder="potato" class="form-control" required>
-        <div ng-show="submitted && articleForm.potato.$invalid" class="help-block">
-          <p ng-show="articleForm.potato.$error.required">Potato is required</p>
-        </div>
+        <span name="potato" data-ng-model="potato" id="potato" ng-bind="potato">0</span>
+
       </div>
     </div>
 
@@ -35,12 +36,28 @@
     <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.eggplant.$invalid }">
       <label mean-token="'create-eggplant'" for="eggplant" class="col-md-3 control-label">Eggplant</label>
       <div class="col-md-9">
-        <input name="eggplant" data-ng-model="eggplant" id="eggplant" cols="30" rows="10" placeholder="eggplant" class="form-control" required>
-        <div ng-show="submitted && articleForm.eggplant.$invalid" class="help-block">
-          <p ng-show="articleForm.eggplant.$error.required">Eggplant is required</p>
-        </div>
+        <span name="eggplant" data-ng-model="eggplant" id="eggplant" ng-bind="eggplant">0</span>
       </div>
     </div>
+
+
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.squash.$invalid }">
+      <label mean-token="'create-squash'" for="squash" class="col-md-3 control-label">Squash</label>
+      <div class="col-md-9">
+        <span name="squash" data-ng-model="squash" id="squash" ng-bind="squash">0</span>
+      </div>
+    </div>
+
+
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.cactus.$invalid }">
+      <label mean-token="'create-cactus'" for="cactus" class="col-md-3 control-label">Cactus</label>
+      <div class="col-md-9">
+        <span name="cactus" data-ng-model="cactus" id="cactus" ng-bind="cactus">0</span>
+      </div>
+    </div>
+
 
 
 
@@ -59,14 +76,27 @@
     </div>
 
 
+    <div class="form-group">
+      <div class="col-md-offset-3 col-md-9">
+        <button type="button" ng-click="squash = squash + 1.00" ng-init="squash=0" id="addSquash" class="btn btn-info">Add Squash Taco</button>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-md-offset-3 col-md-9">
+        <button type="button" ng-click="cactus = cactus + 1.00" ng-init="cactus=0" id="addCactus" class="btn btn-info">Add Cactus Taco</button>
+      </div>
+    </div>
+
+
+
 
     <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.total.$invalid }">
       <label mean-token="'create-total'" for="total" class="col-md-3 control-label">Total</label>
       <div class="col-md-9">
-        <input name="total" data-ng-model="total" id="total" cols="30" rows="10" placeholder="{{ (eggplant + potato) | currency}}" class="form-control" required>
-        <div ng-show="submitted && articleForm.total.$invalid" class="help-block">
-          <p ng-show="articleForm.total.$error.required">Total is required</p>
-        </div>
+        <span name="total" data-ng-model="total" id="total" placeholder="{{ (eggplant + potato + squash + cactus) | currency}}" ng-bind="total"></span>
+
       </div>
     </div>
 

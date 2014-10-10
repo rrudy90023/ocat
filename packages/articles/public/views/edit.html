@@ -53,7 +53,26 @@
 
 
 
+    <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.squash.$invalid }">
+      <label mean-token="'edit-squash'" for="squash" class="col-md-3 control-label">Squash</label>
+      <div class="col-md-9">
+        <input name="squash" data-ng-model="article.squash" id="squash" cols="30" rows="10" placeholder="squash" class="form-control" required>
+        <div ng-show="submitted && articleForm.squash.$invalid" class="help-block">
+          <p ng-show="articleForm.squash.$error.required">Squash is required</p>
+        </div>
+      </div>
+    </div>
 
+
+    <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.cactus.$invalid }">
+      <label mean-token="'edit-cactus'" for="cactus" class="col-md-3 control-label">Cactus</label>
+      <div class="col-md-9">
+        <input name="cactus" data-ng-model="article.cactus" id="cactus" cols="30" rows="10" placeholder="cactus" class="form-control" required>
+        <div ng-show="submitted && articleForm.cactus.$invalid" class="help-block">
+          <p ng-show="articleForm.cactus.$error.required">Cactus is required</p>
+        </div>
+      </div>
+    </div>
 
 
 
@@ -61,7 +80,7 @@
     <div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.total.$invalid }">
       <label mean-token="'edit-total'" for="total" class="col-md-3 control-label">Total</label>
       <div class="col-md-9">
-        <input name="total" data-ng-model="article.total" id="total" cols="30" rows="10" placeholder="{{ (eggplant + potato) | currency}}" class="form-control" required>
+        <input name="total" data-ng-model="article.total" id="total" cols="30" rows="10" placeholder="{{ (eggplant + potato + squash + cactus) | currency}}" class="form-control" required>
         <div ng-show="submitted && articleForm.total.$invalid" class="help-block">
           <p ng-show="articleForm.total.$error.required">Total is required</p>
         </div>

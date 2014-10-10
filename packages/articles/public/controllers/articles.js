@@ -11,7 +11,7 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
 
 
 
-    $scope.$watch('eggplant + potato', function (value) {
+    $scope.$watch('eggplant + potato + squash + cactus', function (value) {
         $scope.total = '$' + value + '.00';
 
     });
@@ -25,6 +25,8 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
           content: this.content,
           potato: this.potato,
           eggplant: this.eggplant,
+          squash: this.squash,
+          cactus: this.cactus,
           total: this.total
         });
         article.$save(function(response) {
@@ -35,6 +37,8 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         this.content = '';
         this.potato = '';
         this.eggplant ='';
+        this.squash = '';
+        this.cactus = '';
         this.total = '';
       } else {
         $scope.submitted = true;

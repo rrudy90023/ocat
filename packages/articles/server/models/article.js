@@ -38,6 +38,19 @@ var ArticleSchema = new Schema({
     trim: true
   },
 
+  squash: {
+    type: Number,
+    required: true,
+    trim: true
+  },
+
+  cactus: {
+    type: Number,
+    required: true,
+    trim: true
+  },
+
+
   total:{
     type: String,
     required: true,
@@ -71,6 +84,19 @@ ArticleSchema.path('potato').validate(function(content) {
 ArticleSchema.path('eggplant').validate(function(content) {
   return !!content;
 }, 'Eggplant taco cannot be blank');
+
+
+ArticleSchema.path('squash').validate(function(content) {
+  return !!content;
+}, 'Squash taco cannot be blank');
+
+
+
+ArticleSchema.path('cactus').validate(function(content) {
+  return !!content;
+}, 'Cactus taco cannot be blank');
+
+
 
 ArticleSchema.path('total').validate(function(content) {
   return !!content;

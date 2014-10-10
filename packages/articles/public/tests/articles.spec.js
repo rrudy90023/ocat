@@ -58,6 +58,8 @@
             content: 'MEAN rocks!',
             potato: 'Potato taco good!',
             eggplant: 'Eggplant taco good!',
+            squash: 'Squash taco good!',
+            cactus: 'Cactus taco good!',
             total: 'Total pay!'
           }]);
 
@@ -71,6 +73,8 @@
             content: 'MEAN rocks!',
             potato: 'Potato taco good!',
             eggplant: 'Eggplant taco good!',
+            squash: 'Squash taco good!',
+            cactus: 'Cactus taco good!',
             total: 'Total pay!'
           }]);
 
@@ -88,6 +92,8 @@
               content: 'MEAN rocks!',
               potato: 'Potato taco good!',
               eggplant: 'Eggplant taco good!',
+              squash: 'Squash taco good!',
+              cactus: 'Cactus taco good!',
               total: 'Total pay!'
             };
           };
@@ -115,6 +121,8 @@
               content: 'MEAN rocks!',
               potato: 'Potato taco good!',
               eggplant: 'Eggplant taco good!',
+              squash: 'Squash taco good!',
+              cactus: 'Cactus taco good!',
               total: 'Total pay!'
             };
           };
@@ -127,6 +135,8 @@
               content: 'MEAN rocks!',
               potato: 'Potato taco good!',
               eggplant: 'Eggplant taco good!',
+              squash: 'Squash taco good!',
+              cactus: 'Cactus taco good!',
               total: 'Total pay!'
             };
           };
@@ -136,6 +146,8 @@
           scope.content = 'MEAN rocks!';
           scope.potato = 'Potato taco good!';
           scope.eggplant = 'Eggplant taco good!';
+          scope.squash = 'Squash taco good!';
+          scope.cactus = 'Cactus taco good!';
           scope.total = 'Total pay!';
           // test post request is sent
           $httpBackend.expectPOST('articles', postArticleData()).respond(responseArticleData());
@@ -149,6 +161,8 @@
           expect(scope.content).toEqual('');
           expect(scope.potato).toEqual('');
           expect(scope.eggplant).toEqual('');
+          expect(scope.squash).toEqual('');
+          expect(scope.cactus).toEqual('');
           expect(scope.total).toEqual('');
           // test URL location to new object
           expect($location.path()).toBe('/articles/' + responseArticleData()._id);
